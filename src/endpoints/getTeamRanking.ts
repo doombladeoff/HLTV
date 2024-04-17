@@ -12,7 +12,7 @@ export interface TeamRanking {
 }
 
 export interface GetTeamArguments {
-  year?: 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022
+  year?:  2015 | 2016| 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024
   month?:
     | 'january'
     | 'february'
@@ -70,14 +70,29 @@ export const getTeamRanking =
 
         const team = {
           name: el.find('.name').text(),
-          id: el.find('.moreLink').attrThen('href', getIdAt(2))
+          id: el.find('.moreLink').attrThen('href', getIdAt(2)),
+          logo: el.find('.team-logo img').attr('src') || ''
+        }
+        var players = [];
+        for (var i = 0; i < el.find('.player-holder').length; i++) {
+            var playerHolderEl = el.find('.player-holder').eq(i);
+            var player = {
+            name: playerHolderEl.find('.nick').text(),
+            image: playerHolderEl.find('.playerPicture').attr('src') || '' ,
+            country: {
+                title: playerHolderEl.find('.nick img').attr('alt'),
+                src: 'https://www.hltv.org' + playerHolderEl.find('.nick img').attr('src') || '' ,
+            }
+            };
+            players[i] = player;
+            //players.push(player);
         }
 
         const changeText = el.find('.change').text()
         const isNew = changeText === 'NEW TEAM'
         const change = changeText === '-' || isNew ? 0 : Number(changeText)
 
-        return { points, place, team, change, isNew }
+        return { points, place, team, players, change, isNew }
       })
 
     return teams
