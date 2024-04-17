@@ -85,7 +85,6 @@ export const getTeamRanking =
             }
             };
             players[i] = player;
-            //players.push(player);
         }
 
         const changeText = el.find('.change').text()
