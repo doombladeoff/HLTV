@@ -23,3 +23,5 @@ const log = (promise: Promise<any>) =>
 // log(HLTV.getTeamRanking())
 // log(HLTV.getResults({ eventIds: [1617] }))
 // log(HLTV.getNews())
+// log(HLTV.getRssNews())
+// log(HLTV.getRssNewsByHref({href: 'https://www.hltv.org/news/38799/epl-groups-a-b-go-live-in-a-single-fantasy-game'}))

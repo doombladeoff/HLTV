@@ -5,8 +5,8 @@ export const fetchPage = async (
   url: string,
   loadPage: (url: string) => Promise<string>
 ): Promise<cheerio.Root> => {
-  const root = cheerio.load(await loadPage(url))
 
+  const root = cheerio.load(await loadPage(url))
   const html = root.html()
 
   if (

@@ -34,6 +34,7 @@ Table of contents
   - [getPastEvents](#getpastevents)
   - [getResults](#getresults)
   - [getNews](#getnews)
+  - [getRssNews](#getrssnews)
   - [connectToScorebot](#connecttoscorebot)
   - [TEAM_PLACEHOLDER_IMAGE](#team_placeholder_image)
   - [PLAYER_PLACEHOLDER_IMAGE](#player_placeholder_image)
@@ -512,6 +513,20 @@ HLTV.getNews({ year: 2020, month: 'may' }).then((res) => {
 ```
 
 **[See schema](https://github.com/gigobyte/HLTV/blob/master/src/endpoints/getNews.ts#L7)**
+
+#### getRssNews
+Parses the info from the `https://www.hltv.org/rss/news` page 
+
+```javascript
+HLTV.getRssNews()
+```
+
+#### getRssNewsByHref
+Parses the info from the `https://www.hltv.org/id/title` page 
+
+```javascript
+HLTV.getRssNewsByHref({ href: 'link here' });
+```
 
 #### connectToScorebot
 
