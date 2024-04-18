@@ -35,6 +35,7 @@ Table of contents
   - [getResults](#getresults)
   - [getNews](#getnews)
   - [getRssNews](#getrssnews)
+  - [getRssNewsByHref](#getrssnewsbyhref)
   - [connectToScorebot](#connecttoscorebot)
   - [TEAM_PLACEHOLDER_IMAGE](#team_placeholder_image)
   - [PLAYER_PLACEHOLDER_IMAGE](#player_placeholder_image)
